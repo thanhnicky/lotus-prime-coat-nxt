@@ -632,12 +632,12 @@ const inputCls =
 /* ============ PROJECTS ============ */
 function Projects() {
   const items = [
-    ["🏭", "Nhà xưởng KCN"],
-    ["🔩", "Khung thép kết cấu"],
-    ["🚪", "Cổng & hàng rào mạ kẽm"],
-    ["⚙️", "Máy móc công nghiệp"],
-    ["🏗️", "Tôn, mái kim loại"],
-    ["🪟", "Khung cửa công trình"],
+    "Nhà xưởng KCN",
+    "Khung thép kết cấu",
+    "Cổng & hàng rào mạ kẽm",
+    "Máy móc công nghiệp",
+    "Tôn, mái kim loại",
+    "Khung cửa công trình",
   ];
   return (
     <section id="Công trình" className="bg-white py-24 md:py-[120px]">
@@ -648,14 +648,22 @@ function Projects() {
           sub="Từ kết cấu thép nhà máy đến cổng sắt mạ kẽm dân dụng."
         />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {items.map(([i, t]) => (
-            <div key={t} className="rounded-2xl overflow-hidden aspect-[4/3] relative group cursor-pointer bg-[#F2F8F4] flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-4xl mb-2">{i}</div>
-                <div className="text-sm font-semibold text-[#1E6B31]/70">{t}</div>
+          {items.map((t, i) => (
+            <div key={t} className="rounded-2xl overflow-hidden aspect-[4/3] relative group cursor-pointer bg-[#F2F8F4] border border-[#E5E7EB]">
+              <div className="absolute inset-0 flex flex-col justify-between p-6">
+                <div className="font-serif italic text-sm text-[#1E6B31]/60">
+                  {String(i + 1).padStart(2, "0")} / 06
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.18em] text-[#1E6B31]/60 mb-1">Hạng mục</div>
+                  <div className="font-serif text-xl text-[#111111] leading-tight">{t}</div>
+                </div>
               </div>
-              <div className="absolute inset-0 bg-[#111111]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="text-xs font-semibold text-white bg-white/20 px-3 py-1 rounded-full">{t}</span>
+              <div className="absolute inset-0 bg-[#111111]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="text-white">
+                  <div className="text-xs uppercase tracking-[0.18em] text-white/60 mb-1">Công trình</div>
+                  <div className="font-serif text-xl">{t}</div>
+                </div>
               </div>
             </div>
           ))}
