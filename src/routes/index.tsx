@@ -188,11 +188,11 @@ function SectionHeader({ label, h2, italic, sub }: { label: string; h2: string; 
 /* ============ WHY SWITCH ============ */
 function WhySwitch() {
   const items = [
-    { i: "🚫", t: "Không mùi độc hại", d: "Thi công trong xưởng kín an toàn. Không cần bảo hộ đặc biệt." },
-    { i: "🔥", t: "Không bắt lửa, không nổ", d: "Lưu kho và vận chuyển an toàn. Đạt chuẩn PCCC khu công nghiệp." },
-    { i: "🌿", t: "Đạt chuẩn môi trường", d: "VOC thấp, đạt EN71-3, ROHS, ASTM F963. Đáp ứng xuất khẩu quốc tế." },
-    { i: "💪", t: "Bám dính vượt trội trên mạ kẽm", d: "Bám thẳng sắt mạ kẽm không cần xử lý phức tạp." },
-    { i: "🏭", t: "Nhiều nhà máy FDI yêu cầu", d: "Xu hướng bắt buộc. Chuyển sớm là lợi thế cạnh tranh." },
+    { t: "Không mùi độc hại", d: "Thi công trong xưởng kín an toàn. Không cần bảo hộ đặc biệt." },
+    { t: "Không bắt lửa, không nổ", d: "Lưu kho và vận chuyển an toàn. Đạt chuẩn PCCC khu công nghiệp." },
+    { t: "Đạt chuẩn môi trường", d: "VOC thấp, đạt EN71-3, ROHS, ASTM F963. Đáp ứng xuất khẩu quốc tế." },
+    { t: "Bám dính vượt trội trên mạ kẽm", d: "Bám thẳng sắt mạ kẽm không cần xử lý phức tạp." },
+    { t: "Nhiều nhà máy FDI yêu cầu", d: "Xu hướng bắt buộc. Chuyển sớm là lợi thế cạnh tranh." },
   ];
   return (
     <section className="bg-white py-24 md:py-[120px]">
@@ -203,23 +203,25 @@ function WhySwitch() {
           sub="Tiêu chuẩn an toàn và môi trường đang định hình lại ngành sơn công nghiệp."
         />
         <div className="grid md:grid-cols-3 gap-5">
-          {items.slice(0, 3).map((it) => (
-            <Card key={it.t} {...it} />
+          {items.slice(0, 3).map((it, i) => (
+            <Card key={it.t} index={i + 1} {...it} />
           ))}
         </div>
         <div className="grid md:grid-cols-2 gap-5 mt-5 md:max-w-[calc(66.66%-0.625rem)] md:mx-auto">
-          {items.slice(3).map((it) => (
-            <Card key={it.t} {...it} />
+          {items.slice(3).map((it, i) => (
+            <Card key={it.t} index={i + 4} {...it} />
           ))}
         </div>
       </div>
     </section>
   );
 }
-function Card({ i, t, d }: { i: string; t: string; d: string }) {
+function Card({ index, t, d }: { index: number; t: string; d: string }) {
   return (
     <div className="border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] transition-all duration-200">
-      <div className="text-2xl mb-5">{i}</div>
+      <div className="font-serif text-2xl text-[#1E6B31] mb-5 tracking-tight">
+        {String(index).padStart(2, "0")}
+      </div>
       <div className="font-semibold text-[#111111] text-base mb-2">{t}</div>
       <div className="text-sm text-[#6B7280] leading-6">{d}</div>
     </div>
