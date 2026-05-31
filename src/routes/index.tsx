@@ -303,7 +303,7 @@ function SolutionCard({
     >
       {hero && (
         <div className="absolute top-4 right-4 bg-[#E8711A] text-white text-xs font-bold px-3 py-1 rounded-full">
-          ⭐ Bán chạy nhất
+          Bán chạy nhất
         </div>
       )}
       <span
@@ -353,7 +353,7 @@ function SolutionCard({
           className="block text-center bg-[#E8711A] text-white font-bold py-3 rounded-xl mt-6"
           style={{ boxShadow: "0 4px 16px rgba(232,113,26,0.3)" }}
         >
-          🛒 Đặt ngay sản phẩm Hero
+          Đặt ngay sản phẩm Hero →
         </a>
       ) : (
         <a href="#dat-hang" className="text-sm font-semibold text-[#1E6B31] hover:underline mt-6 inline-block">
@@ -387,7 +387,7 @@ function Products() {
       note: "Pha đóng rắn LH5 tỷ lệ 15%",
     },
     {
-      tag: "2in1 DTM ⭐", name: "Metal Coat 2in1", hero: true,
+      tag: "2in1 DTM", name: "Metal Coat 2in1", hero: true,
       desc: "1 lớp duy nhất — vừa lót chống gỉ, vừa phủ màu hoàn thiện.",
       features: ["Không cần lót riêng, tiết kiệm chi phí", "Bám thẳng mạ kẽm", "Nhanh khô, màng bóng đẹp", "Chống gỉ kháng UV bền thời tiết"],
       price: "254,880₫",
@@ -443,7 +443,7 @@ function Products() {
                     href="#dat-hang"
                     className="block text-center bg-[#E8711A] text-white font-bold py-2.5 rounded-xl text-sm mt-4"
                   >
-                    🛒 Đặt ngay
+                    Đặt ngay →
                   </a>
                 )}
               </div>
@@ -466,7 +466,7 @@ function OrderForm() {
   const systems = [
     { t: "Hệ 1K — Lót + Phủ màu 1K", s: "Kết cấu thép, khung thép, tôn mạ kẽm", tag: "Phổ biến", tagCls: "bg-[#F2F8F4] text-[#1E6B31]" },
     { t: "Hệ 2K — Lót + Phủ cao cấp", s: "Máy móc, ngoài trời, yêu cầu độ cứng cao", tag: "Kỹ thuật cao", tagCls: "bg-[#F2F8F4] text-[#1E6B31]" },
-    { t: "2in1 DTM — 1 lớp, vừa lót vừa phủ ⭐", s: "Sắt hộp mạ kẽm, cổng sắt, cửa thép", tag: "Tiết kiệm nhất", tagCls: "bg-[#FEF3E8] text-[#C2590A]" },
+    { t: "2in1 DTM — 1 lớp, vừa lót vừa phủ", s: "Sắt hộp mạ kẽm, cổng sắt, cửa thép", tag: "Tiết kiệm nhất", tagCls: "bg-[#FEF3E8] text-[#C2590A]" },
   ];
   const sizes = [
     { t: "1 kg", s: "Dùng thử" },
@@ -578,12 +578,10 @@ function OrderForm() {
             </button>
           </div>
 
-          <div className="mt-4 bg-[#FEFBF8] border border-[#FDDBB8] rounded-xl p-4 flex items-center gap-3">
-            <span className="text-xl">🏷️</span>
-            <div>
-              <div className="text-sm font-semibold text-[#92400E]">Mã TRATRUOC — giảm 10% thanh toán online</div>
-              <div className="text-xs text-[#B45309] mt-0.5">Miễn ship đơn ≥ 2,999,000₫</div>
-            </div>
+          <div className="mt-4 bg-[#FEFBF8] border border-[#FDDBB8] rounded-xl p-4">
+            <div className="text-xs font-bold tracking-[0.12em] uppercase text-[#C2590A] mb-1">Ưu đãi</div>
+            <div className="text-sm font-semibold text-[#92400E]">Mã TRATRUOC — giảm 10% thanh toán online</div>
+            <div className="text-xs text-[#B45309] mt-0.5">Miễn ship đơn ≥ 2,999,000₫</div>
           </div>
 
           {/* Submit */}
@@ -593,9 +591,9 @@ function OrderForm() {
               className="w-full bg-[#E8711A] text-white font-bold py-4 rounded-xl text-base transition-all hover:-translate-y-0.5"
               style={{ boxShadow: "0 4px 20px rgba(232,113,26,0.35)" }}
             >
-              🛒 Đặt hàng ngay — Giao toàn quốc
+              Đặt hàng ngay — Giao toàn quốc
             </button>
-            <div className="mt-3 text-center text-xs text-[#9CA3AF]">⏱ Kỹ thuật viên xác nhận trong 30 phút</div>
+            <div className="mt-3 text-center text-xs text-[#9CA3AF]">Kỹ thuật viên xác nhận trong 30 phút</div>
 
             <div className="mt-8 mb-6 flex items-center gap-4">
               <div className="flex-1 h-px bg-[#E5E7EB]" />
@@ -607,18 +605,18 @@ function OrderForm() {
               href="https://zalo.me/0943966662"
               className="block text-center border-2 border-[#1E6B31] text-[#1E6B31] font-semibold py-3.5 rounded-xl text-sm hover:bg-[#1E6B31] hover:text-white transition-all duration-200"
             >
-              💬 Liên hệ kỹ thuật tư vấn qua Zalo
+              Liên hệ kỹ thuật tư vấn qua Zalo
             </a>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-10 mt-8">
               {[
-                ["🛡", "Hoàn tiền nếu không hài lòng"],
-                ["🚚", "Giao hàng 2–5 ngày"],
-                ["🔧", "Hỗ trợ kỹ thuật miễn phí"],
-              ].map(([i, t]) => (
-                <div key={t} className="text-center text-xs text-[#9CA3AF]">
-                  <div className="text-lg">{i}</div>
-                  <div>{t}</div>
+                "Hoàn tiền nếu không hài lòng",
+                "Giao hàng 2–5 ngày",
+                "Hỗ trợ kỹ thuật miễn phí",
+              ].map((t) => (
+                <div key={t} className="flex items-center gap-2 text-xs text-[#9CA3AF]">
+                  <Check size={14} className="text-[#1E6B31]" strokeWidth={2.5} />
+                  <span>{t}</span>
                 </div>
               ))}
             </div>
