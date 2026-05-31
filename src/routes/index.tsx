@@ -154,9 +154,12 @@ function Hero() {
 
         <div className="order-1 lg:order-2 relative rounded-2xl overflow-hidden aspect-[4/3]">
           <img src={heroImg} alt="Thợ sơn kim loại hệ nước Lotus Metal Coat" className="w-full h-full object-cover" />
-          <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg px-4 py-3">
-            <div className="font-semibold text-sm text-[#111111]">✓ Đạt chuẩn quốc tế</div>
-            <div className="text-xs text-[#6B7280] mt-0.5">EN71-3 · ROHS · ASTM F963</div>
+          <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg px-5 py-3.5 flex items-center gap-3">
+            <Check size={18} className="text-[#1E6B31]" strokeWidth={2.5} />
+            <div>
+              <div className="font-semibold text-sm text-[#111111]">Đạt chuẩn quốc tế</div>
+              <div className="text-xs text-[#6B7280] mt-0.5">EN71-3 · ROHS · ASTM F963</div>
+            </div>
           </div>
         </div>
       </div>
@@ -185,11 +188,11 @@ function SectionHeader({ label, h2, italic, sub }: { label: string; h2: string; 
 /* ============ WHY SWITCH ============ */
 function WhySwitch() {
   const items = [
-    { i: "🚫", t: "Không mùi độc hại", d: "Thi công trong xưởng kín an toàn. Không cần bảo hộ đặc biệt." },
-    { i: "🔥", t: "Không bắt lửa, không nổ", d: "Lưu kho và vận chuyển an toàn. Đạt chuẩn PCCC khu công nghiệp." },
-    { i: "🌿", t: "Đạt chuẩn môi trường", d: "VOC thấp, đạt EN71-3, ROHS, ASTM F963. Đáp ứng xuất khẩu quốc tế." },
-    { i: "💪", t: "Bám dính vượt trội trên mạ kẽm", d: "Bám thẳng sắt mạ kẽm không cần xử lý phức tạp." },
-    { i: "🏭", t: "Nhiều nhà máy FDI yêu cầu", d: "Xu hướng bắt buộc. Chuyển sớm là lợi thế cạnh tranh." },
+    { t: "Không mùi độc hại", d: "Thi công trong xưởng kín an toàn. Không cần bảo hộ đặc biệt." },
+    { t: "Không bắt lửa, không nổ", d: "Lưu kho và vận chuyển an toàn. Đạt chuẩn PCCC khu công nghiệp." },
+    { t: "Đạt chuẩn môi trường", d: "VOC thấp, đạt EN71-3, ROHS, ASTM F963. Đáp ứng xuất khẩu quốc tế." },
+    { t: "Bám dính vượt trội trên mạ kẽm", d: "Bám thẳng sắt mạ kẽm không cần xử lý phức tạp." },
+    { t: "Nhiều nhà máy FDI yêu cầu", d: "Xu hướng bắt buộc. Chuyển sớm là lợi thế cạnh tranh." },
   ];
   return (
     <section className="bg-white py-24 md:py-[120px]">
@@ -200,23 +203,25 @@ function WhySwitch() {
           sub="Tiêu chuẩn an toàn và môi trường đang định hình lại ngành sơn công nghiệp."
         />
         <div className="grid md:grid-cols-3 gap-5">
-          {items.slice(0, 3).map((it) => (
-            <Card key={it.t} {...it} />
+          {items.slice(0, 3).map((it, i) => (
+            <Card key={it.t} index={i + 1} {...it} />
           ))}
         </div>
         <div className="grid md:grid-cols-2 gap-5 mt-5 md:max-w-[calc(66.66%-0.625rem)] md:mx-auto">
-          {items.slice(3).map((it) => (
-            <Card key={it.t} {...it} />
+          {items.slice(3).map((it, i) => (
+            <Card key={it.t} index={i + 4} {...it} />
           ))}
         </div>
       </div>
     </section>
   );
 }
-function Card({ i, t, d }: { i: string; t: string; d: string }) {
+function Card({ index, t, d }: { index: number; t: string; d: string }) {
   return (
     <div className="border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] transition-all duration-200">
-      <div className="text-2xl mb-5">{i}</div>
+      <div className="font-serif text-2xl text-[#1E6B31] mb-5 tracking-tight">
+        {String(index).padStart(2, "0")}
+      </div>
       <div className="font-semibold text-[#111111] text-base mb-2">{t}</div>
       <div className="text-sm text-[#6B7280] leading-6">{d}</div>
     </div>
@@ -298,7 +303,7 @@ function SolutionCard({
     >
       {hero && (
         <div className="absolute top-4 right-4 bg-[#E8711A] text-white text-xs font-bold px-3 py-1 rounded-full">
-          ⭐ Bán chạy nhất
+          Bán chạy nhất
         </div>
       )}
       <span
@@ -348,7 +353,7 @@ function SolutionCard({
           className="block text-center bg-[#E8711A] text-white font-bold py-3 rounded-xl mt-6"
           style={{ boxShadow: "0 4px 16px rgba(232,113,26,0.3)" }}
         >
-          🛒 Đặt ngay sản phẩm Hero
+          Đặt ngay sản phẩm Hero →
         </a>
       ) : (
         <a href="#dat-hang" className="text-sm font-semibold text-[#1E6B31] hover:underline mt-6 inline-block">
@@ -382,7 +387,7 @@ function Products() {
       note: "Pha đóng rắn LH5 tỷ lệ 15%",
     },
     {
-      tag: "2in1 DTM ⭐", name: "Metal Coat 2in1", hero: true,
+      tag: "2in1 DTM", name: "Metal Coat 2in1", hero: true,
       desc: "1 lớp duy nhất — vừa lót chống gỉ, vừa phủ màu hoàn thiện.",
       features: ["Không cần lót riêng, tiết kiệm chi phí", "Bám thẳng mạ kẽm", "Nhanh khô, màng bóng đẹp", "Chống gỉ kháng UV bền thời tiết"],
       price: "254,880₫",
@@ -438,7 +443,7 @@ function Products() {
                     href="#dat-hang"
                     className="block text-center bg-[#E8711A] text-white font-bold py-2.5 rounded-xl text-sm mt-4"
                   >
-                    🛒 Đặt ngay
+                    Đặt ngay →
                   </a>
                 )}
               </div>
@@ -461,7 +466,7 @@ function OrderForm() {
   const systems = [
     { t: "Hệ 1K — Lót + Phủ màu 1K", s: "Kết cấu thép, khung thép, tôn mạ kẽm", tag: "Phổ biến", tagCls: "bg-[#F2F8F4] text-[#1E6B31]" },
     { t: "Hệ 2K — Lót + Phủ cao cấp", s: "Máy móc, ngoài trời, yêu cầu độ cứng cao", tag: "Kỹ thuật cao", tagCls: "bg-[#F2F8F4] text-[#1E6B31]" },
-    { t: "2in1 DTM — 1 lớp, vừa lót vừa phủ ⭐", s: "Sắt hộp mạ kẽm, cổng sắt, cửa thép", tag: "Tiết kiệm nhất", tagCls: "bg-[#FEF3E8] text-[#C2590A]" },
+    { t: "2in1 DTM — 1 lớp, vừa lót vừa phủ", s: "Sắt hộp mạ kẽm, cổng sắt, cửa thép", tag: "Tiết kiệm nhất", tagCls: "bg-[#FEF3E8] text-[#C2590A]" },
   ];
   const sizes = [
     { t: "1 kg", s: "Dùng thử" },
@@ -573,12 +578,10 @@ function OrderForm() {
             </button>
           </div>
 
-          <div className="mt-4 bg-[#FEFBF8] border border-[#FDDBB8] rounded-xl p-4 flex items-center gap-3">
-            <span className="text-xl">🏷️</span>
-            <div>
-              <div className="text-sm font-semibold text-[#92400E]">Mã TRATRUOC — giảm 10% thanh toán online</div>
-              <div className="text-xs text-[#B45309] mt-0.5">Miễn ship đơn ≥ 2,999,000₫</div>
-            </div>
+          <div className="mt-4 bg-[#FEFBF8] border border-[#FDDBB8] rounded-xl p-4">
+            <div className="text-xs font-bold tracking-[0.12em] uppercase text-[#C2590A] mb-1">Ưu đãi</div>
+            <div className="text-sm font-semibold text-[#92400E]">Mã TRATRUOC — giảm 10% thanh toán online</div>
+            <div className="text-xs text-[#B45309] mt-0.5">Miễn ship đơn ≥ 2,999,000₫</div>
           </div>
 
           {/* Submit */}
@@ -588,9 +591,9 @@ function OrderForm() {
               className="w-full bg-[#E8711A] text-white font-bold py-4 rounded-xl text-base transition-all hover:-translate-y-0.5"
               style={{ boxShadow: "0 4px 20px rgba(232,113,26,0.35)" }}
             >
-              🛒 Đặt hàng ngay — Giao toàn quốc
+              Đặt hàng ngay — Giao toàn quốc
             </button>
-            <div className="mt-3 text-center text-xs text-[#9CA3AF]">⏱ Kỹ thuật viên xác nhận trong 30 phút</div>
+            <div className="mt-3 text-center text-xs text-[#9CA3AF]">Kỹ thuật viên xác nhận trong 30 phút</div>
 
             <div className="mt-8 mb-6 flex items-center gap-4">
               <div className="flex-1 h-px bg-[#E5E7EB]" />
@@ -602,18 +605,18 @@ function OrderForm() {
               href="https://zalo.me/0943966662"
               className="block text-center border-2 border-[#1E6B31] text-[#1E6B31] font-semibold py-3.5 rounded-xl text-sm hover:bg-[#1E6B31] hover:text-white transition-all duration-200"
             >
-              💬 Liên hệ kỹ thuật tư vấn qua Zalo
+              Liên hệ kỹ thuật tư vấn qua Zalo
             </a>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-10 mt-8">
               {[
-                ["🛡", "Hoàn tiền nếu không hài lòng"],
-                ["🚚", "Giao hàng 2–5 ngày"],
-                ["🔧", "Hỗ trợ kỹ thuật miễn phí"],
-              ].map(([i, t]) => (
-                <div key={t} className="text-center text-xs text-[#9CA3AF]">
-                  <div className="text-lg">{i}</div>
-                  <div>{t}</div>
+                "Hoàn tiền nếu không hài lòng",
+                "Giao hàng 2–5 ngày",
+                "Hỗ trợ kỹ thuật miễn phí",
+              ].map((t) => (
+                <div key={t} className="flex items-center gap-2 text-xs text-[#9CA3AF]">
+                  <Check size={14} className="text-[#1E6B31]" strokeWidth={2.5} />
+                  <span>{t}</span>
                 </div>
               ))}
             </div>
@@ -629,12 +632,12 @@ const inputCls =
 /* ============ PROJECTS ============ */
 function Projects() {
   const items = [
-    ["🏭", "Nhà xưởng KCN"],
-    ["🔩", "Khung thép kết cấu"],
-    ["🚪", "Cổng & hàng rào mạ kẽm"],
-    ["⚙️", "Máy móc công nghiệp"],
-    ["🏗️", "Tôn, mái kim loại"],
-    ["🪟", "Khung cửa công trình"],
+    "Nhà xưởng KCN",
+    "Khung thép kết cấu",
+    "Cổng & hàng rào mạ kẽm",
+    "Máy móc công nghiệp",
+    "Tôn, mái kim loại",
+    "Khung cửa công trình",
   ];
   return (
     <section id="Công trình" className="bg-white py-24 md:py-[120px]">
@@ -645,14 +648,22 @@ function Projects() {
           sub="Từ kết cấu thép nhà máy đến cổng sắt mạ kẽm dân dụng."
         />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {items.map(([i, t]) => (
-            <div key={t} className="rounded-2xl overflow-hidden aspect-[4/3] relative group cursor-pointer bg-[#F2F8F4] flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-4xl mb-2">{i}</div>
-                <div className="text-sm font-semibold text-[#1E6B31]/70">{t}</div>
+          {items.map((t, i) => (
+            <div key={t} className="rounded-2xl overflow-hidden aspect-[4/3] relative group cursor-pointer bg-[#F2F8F4] border border-[#E5E7EB]">
+              <div className="absolute inset-0 flex flex-col justify-between p-6">
+                <div className="font-serif italic text-sm text-[#1E6B31]/60">
+                  {String(i + 1).padStart(2, "0")} / 06
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.18em] text-[#1E6B31]/60 mb-1">Hạng mục</div>
+                  <div className="font-serif text-xl text-[#111111] leading-tight">{t}</div>
+                </div>
               </div>
-              <div className="absolute inset-0 bg-[#111111]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="text-xs font-semibold text-white bg-white/20 px-3 py-1 rounded-full">{t}</span>
+              <div className="absolute inset-0 bg-[#111111]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="text-white">
+                  <div className="text-xs uppercase tracking-[0.18em] text-white/60 mb-1">Công trình</div>
+                  <div className="font-serif text-xl">{t}</div>
+                </div>
               </div>
             </div>
           ))}
@@ -665,10 +676,10 @@ function Projects() {
 /* ============ CERTIFICATES ============ */
 function Certificates() {
   const certs = [
-    { i: "🛡", n: "EN71-3", o: "EU STANDARD", d: "Không kim loại nặng độc hại. An toàn tuyệt đối cho người dùng." },
-    { i: "♻️", n: "ROHS", o: "EU DIRECTIVE", d: "Hạn chế chất nguy hiểm. Đáp ứng xuất khẩu thị trường châu Âu." },
-    { i: "🔬", n: "ASTM F963", o: "US STANDARD", d: "An toàn tiếp xúc thường xuyên. Chuẩn kiểm định hàng hóa." },
-    { i: "✅", n: "FDA", o: "U.S. FDA", d: "Thành phần an toàn sức khỏe. Chuẩn kiểm định dược phẩm Mỹ." },
+    { n: "EN71-3", o: "EU STANDARD", d: "Không kim loại nặng độc hại. An toàn tuyệt đối cho người dùng." },
+    { n: "ROHS", o: "EU DIRECTIVE", d: "Hạn chế chất nguy hiểm. Đáp ứng xuất khẩu thị trường châu Âu." },
+    { n: "ASTM F963", o: "US STANDARD", d: "An toàn tiếp xúc thường xuyên. Chuẩn kiểm định hàng hóa." },
+    { n: "FDA", o: "U.S. FDA", d: "Thành phần an toàn sức khỏe. Chuẩn kiểm định dược phẩm Mỹ." },
   ];
   return (
     <section id="Chứng nhận" className="bg-[#F2F8F4] py-24 md:py-[120px]">
@@ -682,11 +693,11 @@ function Certificates() {
           {certs.map((c) => (
             <div
               key={c.n}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-7 text-center hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-3xl mb-4">{c.i}</div>
-              <div className="font-black text-xl text-[#111111] mb-1">{c.n}</div>
-              <div className="text-xs text-[#9CA3AF] uppercase tracking-widest mb-3">{c.o}</div>
+              <div className="font-serif text-3xl text-[#1E6B31] font-semibold mb-1 tracking-tight">{c.n}</div>
+              <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.2em] mb-4">{c.o}</div>
+              <div className="h-px bg-[#E5E7EB] mb-4" />
               <div className="text-xs text-[#6B7280] leading-5">{c.d}</div>
             </div>
           ))}
@@ -760,13 +771,13 @@ function FooterCTA() {
             className="bg-[#E8711A] text-white font-bold px-8 py-4 rounded-xl transition hover:brightness-110"
             style={{ boxShadow: "0 4px 24px rgba(232,113,26,0.4)" }}
           >
-            🛒 Đặt combo ngay
+            Đặt combo ngay
           </a>
           <a
             href="https://zalo.me/0943966662"
             className="border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition"
           >
-            💬 Tư vấn kỹ thuật Zalo
+            Tư vấn kỹ thuật Zalo
           </a>
         </div>
         <div className="flex flex-wrap justify-center gap-6 md:gap-10">
