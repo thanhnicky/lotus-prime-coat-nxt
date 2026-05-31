@@ -676,10 +676,10 @@ function Projects() {
 /* ============ CERTIFICATES ============ */
 function Certificates() {
   const certs = [
-    { i: "🛡", n: "EN71-3", o: "EU STANDARD", d: "Không kim loại nặng độc hại. An toàn tuyệt đối cho người dùng." },
-    { i: "♻️", n: "ROHS", o: "EU DIRECTIVE", d: "Hạn chế chất nguy hiểm. Đáp ứng xuất khẩu thị trường châu Âu." },
-    { i: "🔬", n: "ASTM F963", o: "US STANDARD", d: "An toàn tiếp xúc thường xuyên. Chuẩn kiểm định hàng hóa." },
-    { i: "✅", n: "FDA", o: "U.S. FDA", d: "Thành phần an toàn sức khỏe. Chuẩn kiểm định dược phẩm Mỹ." },
+    { n: "EN71-3", o: "EU STANDARD", d: "Không kim loại nặng độc hại. An toàn tuyệt đối cho người dùng." },
+    { n: "ROHS", o: "EU DIRECTIVE", d: "Hạn chế chất nguy hiểm. Đáp ứng xuất khẩu thị trường châu Âu." },
+    { n: "ASTM F963", o: "US STANDARD", d: "An toàn tiếp xúc thường xuyên. Chuẩn kiểm định hàng hóa." },
+    { n: "FDA", o: "U.S. FDA", d: "Thành phần an toàn sức khỏe. Chuẩn kiểm định dược phẩm Mỹ." },
   ];
   return (
     <section id="Chứng nhận" className="bg-[#F2F8F4] py-24 md:py-[120px]">
@@ -693,11 +693,11 @@ function Certificates() {
           {certs.map((c) => (
             <div
               key={c.n}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-7 text-center hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-3xl mb-4">{c.i}</div>
-              <div className="font-black text-xl text-[#111111] mb-1">{c.n}</div>
-              <div className="text-xs text-[#9CA3AF] uppercase tracking-widest mb-3">{c.o}</div>
+              <div className="font-serif text-3xl text-[#1E6B31] font-semibold mb-1 tracking-tight">{c.n}</div>
+              <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.2em] mb-4">{c.o}</div>
+              <div className="h-px bg-[#E5E7EB] mb-4" />
               <div className="text-xs text-[#6B7280] leading-5">{c.d}</div>
             </div>
           ))}
