@@ -154,9 +154,12 @@ function Hero() {
 
         <div className="order-1 lg:order-2 relative rounded-2xl overflow-hidden aspect-[4/3]">
           <img src={heroImg} alt="Thợ sơn kim loại hệ nước Lotus Metal Coat" className="w-full h-full object-cover" />
-          <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg px-4 py-3">
-            <div className="font-semibold text-sm text-[#111111]">✓ Đạt chuẩn quốc tế</div>
-            <div className="text-xs text-[#6B7280] mt-0.5">EN71-3 · ROHS · ASTM F963</div>
+          <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg px-5 py-3.5 flex items-center gap-3">
+            <Check size={18} className="text-[#1E6B31]" strokeWidth={2.5} />
+            <div>
+              <div className="font-semibold text-sm text-[#111111]">Đạt chuẩn quốc tế</div>
+              <div className="text-xs text-[#6B7280] mt-0.5">EN71-3 · ROHS · ASTM F963</div>
+            </div>
           </div>
         </div>
       </div>
