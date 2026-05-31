@@ -771,13 +771,13 @@ function FooterCTA() {
             className="bg-[#E8711A] text-white font-bold px-8 py-4 rounded-xl transition hover:brightness-110"
             style={{ boxShadow: "0 4px 24px rgba(232,113,26,0.4)" }}
           >
-            🛒 Đặt combo ngay
+            Đặt combo ngay
           </a>
           <a
             href="https://zalo.me/0943966662"
             className="border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition"
           >
-            💬 Tư vấn kỹ thuật Zalo
+            Tư vấn kỹ thuật Zalo
           </a>
         </div>
         <div className="flex flex-wrap justify-center gap-6 md:gap-10">
