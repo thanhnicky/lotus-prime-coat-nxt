@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Lotus Paint — Metal Coat" },
       { name: "twitter:description", content: "Lotus Paint Showcase is a premium Vietnamese landing page for water-based metal paint." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9882134b-4d58-49f4-a8c3-885315c8cb0a/id-preview-3e8c1936--c39ba587-21ae-459a-8a3b-2f681cbc3d8b.lovable.app-1780237082295.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9882134b-4d58-49f4-a8c3-885315c8cb0a/id-preview-3e8c1936--c39ba587-21ae-459a-8a3b-2f681cbc3d8b.lovable.app-1780237082295.png" },
@@ -94,6 +94,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Lotus Paint",
+              url: "https://lotus-prime-coat-nxt.lovable.app",
+              brand: "Lotus Paint — Metal Coat",
+              telephone: "+84943966662",
+            },
+            {
+              "@type": "WebSite",
+              name: "Lotus Paint — Metal Coat",
+              url: "https://lotus-prime-coat-nxt.lovable.app",
+            },
+          ],
+        }),
       },
     ],
   }),
