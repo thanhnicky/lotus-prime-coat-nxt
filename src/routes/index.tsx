@@ -79,16 +79,18 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-[#111111]">
       <Navbar scrolled={scrolled} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
-      <Hero />
-      <WhySwitch />
-      <TrustNumbers />
-      <Solutions />
-      <Products />
-      <OrderForm />
-      <Projects />
-      <Certificates />
-      <FAQ />
-      <FooterCTA />
+      <main>
+        <Hero />
+        <WhySwitch />
+        <TrustNumbers />
+        <Solutions />
+        <Products />
+        <OrderForm />
+        <Projects />
+        <Certificates />
+        <FAQ />
+        <FooterCTA />
+      </main>
       <FooterBottom />
       <FloatingButtons />
     </div>
