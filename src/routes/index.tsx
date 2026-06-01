@@ -156,22 +156,28 @@ function Navbar({ scrolled, mobileOpen, setMobileOpen }: { scrolled: boolean; mo
 /* ============ HERO ============ */
 function Hero() {
   return (
-    <section className="bg-[#FAFAF8] pt-32 md:pt-40 pb-20 md:pb-24">
+    <section 
+      className="pt-28 pb-16"
+      style={{
+        backgroundColor: "#FAFAF8",
+        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'80\' height=\'80\' viewBox=\'0 0 80 80\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%231E6B31\' fill-opacity=\'0.03\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 0h40v40H0V0zm40 40h40v40H40V40z\'/%3E%3C/g%3E%3C/svg%3E")'
+      }}
+    >
       <div className="mx-auto max-w-[1120px] px-6 grid lg:grid-cols-[52%_48%] gap-10 lg:gap-16 items-center">
         <div className="order-2 lg:order-1">
           <div className="flex items-center gap-2 mb-8">
-            <div className="w-8 h-px bg-[#1E6B31]" />
-            <span className="text-xs font-semibold tracking-[0.12em] uppercase text-[#1E6B31]">
+            <div className="w-8 h-px bg-[#D1D5DB]" />
+            <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B7280]">
               Sơn kim loại hệ nước
             </span>
           </div>
 
-          <h1 className="font-serif mb-6 leading-[1.1] text-3xl lg:text-[42px]">
+          <h1 className="font-serif mb-6 tracking-[-0.03em] leading-[1.05] text-[clamp(30px,4vw,44px)]">
             <span className="block font-normal text-[#111111]">Bảo vệ kim loại bền vững —</span>
             <span className="block italic font-light text-[#374151]">an toàn, thân thiện.</span>
           </h1>
 
-          <p className="text-base text-[#6B7280] leading-7 mb-10">
+          <p className="text-base text-[#6B7280] leading-7 mb-10 max-w-md">
             Hệ sơn gốc nước thay thế hoàn toàn sơn dung môi.<br />
             Không mùi · Không bắt lửa · Đạt chuẩn EN71-3 · ROHS · ASTM F963.
           </p>
@@ -179,8 +185,7 @@ function Hero() {
           <div className="flex flex-wrap gap-3 mb-10">
             <a
               href="#dat-hang"
-              className="bg-[#E8711A] text-white font-semibold px-7 py-3.5 rounded-xl text-sm transition-all hover:brightness-110 hover:-translate-y-px"
-              style={{ boxShadow: "0 4px 20px rgba(232,113,26,0.3)" }}
+              className="bg-[#E8711A] text-white font-semibold px-7 py-3.5 rounded-xl text-sm shadow-[0_2px_4px_rgba(0,0,0,0.1),_0_6px_20px_rgba(232,113,26,0.35)] hover:-translate-y-[2px] transition-all duration-200"
             >
               Chọn combo đặt hàng
             </a>
@@ -192,17 +197,17 @@ function Hero() {
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-8 border-t border-[#E5E7EB]">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#E5E7EB] pt-6 mt-8">
             {["12+ năm kinh nghiệm", "Giao hàng toàn quốc", "Hoàn tiền 100%"].map((t) => (
               <div key={t} className="flex items-center gap-2">
-                <Check size={16} className="text-[#1E6B31]" strokeWidth={2.5} />
-                <span className="text-sm text-[#6B7280]">{t}</span>
+                <Check className="text-[#1E6B31] w-3.5 h-3.5" strokeWidth={2.5} />
+                <span className="text-[13px] text-[#6B7280]">{t}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="order-1 lg:order-2 relative rounded-2xl overflow-hidden aspect-[4/3]">
+        <div className="order-1 lg:order-2 relative rounded-[20px] overflow-hidden aspect-[4/3] ring-1 ring-black/5">
           <img src={heroImg} alt="Thợ sơn kim loại hệ nước Lotus Metal Coat" className="w-full h-full object-cover" />
           <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg px-5 py-3.5 flex items-center gap-3">
             <Check size={18} className="text-[#1E6B31]" strokeWidth={2.5} />
@@ -222,15 +227,18 @@ function SectionHeader({ label, h2, italic, sub, h2ClassName }: { label: string;
   return (
     <div className="text-center mb-12 md:mb-16">
       <div className="flex items-center justify-center gap-2 mb-4">
-        <div className="w-8 h-px bg-[#1E6B31]" />
-        <span className="text-xs font-semibold tracking-[0.12em] uppercase text-[#1E6B31]">{label}</span>
-        <div className="w-8 h-px bg-[#1E6B31]" />
+        <div className="w-8 h-px bg-[#D1D5DB]" />
+        <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B7280]">{label}</span>
+        <div className="w-8 h-px bg-[#D1D5DB]" />
       </div>
-      <h2 className={`font-serif font-semibold text-[#111111] leading-[1.15] ${h2ClassName || ""}`} style={h2ClassName ? undefined : { fontSize: "clamp(30px, 4vw, 44px)" }}>
+      <h2 
+        className={`font-serif font-semibold text-[#111111] tracking-[-0.03em] leading-[1.08] max-w-2xl mx-auto ${h2ClassName || ""}`} 
+        style={h2ClassName ? undefined : { fontSize: "clamp(30px, 4vw, 36px)" }}
+      >
         {h2}
         {italic && <span className="block italic font-normal">{italic}</span>}
       </h2>
-      {sub && <p className="text-base text-[#6B7280] mt-3 max-w-lg mx-auto">{sub}</p>}
+      {sub && <p className="text-base text-[#6B7280] leading-[1.6] mt-3 max-w-lg mx-auto">{sub}</p>}
     </div>
   );
 }
@@ -268,12 +276,15 @@ function WhySwitch() {
 }
 function Card({ index, t, d }: { index: number; t: string; d: string }) {
   return (
-    <div className="border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] transition-all duration-200">
-      <div className="font-serif text-2xl text-[#D1D5DB] mb-5 tracking-tight">
+    <div 
+      className="bg-white pl-[28px] py-6 rounded-r-[16px] transition-colors duration-200 hover:bg-[#F8FBF9]"
+      style={{ borderLeft: "3px solid #1E6B31" }}
+    >
+      <div className="text-[13px] font-semibold text-[#D1D5DB] mb-3 tracking-tight">
         {String(index).padStart(2, "0")}
       </div>
-      <div className="font-sans font-bold text-[#111111] text-base mb-2">{t}</div>
-      <div className="text-sm text-[#6B7280] leading-6">{d}</div>
+      <div className="font-bold text-[#111111] text-[15px] mb-2">{t}</div>
+      <div className="text-[14px] text-[#6B7280] leading-[1.6]">{d}</div>
     </div>
   );
 }
@@ -290,12 +301,19 @@ function TrustNumbers() {
     <section className="bg-[#111111] py-20">
       <div className="mx-auto max-w-[1120px] px-6 grid grid-cols-2 lg:grid-cols-4 gap-y-10">
         {stats.map((s, idx) => (
-          <div key={s.l} className={`text-center ${idx > 0 ? "lg:border-l lg:border-white/15" : ""}`}>
-            <div className="font-serif font-bold text-white leading-none" style={{ fontSize: "clamp(56px, 6vw, 80px)" }}>
+          <div 
+            key={s.l} 
+            className="text-center"
+            style={idx > 0 ? { borderLeft: "1px solid rgba(255,255,255,0.08)" } : undefined}
+          >
+            <div 
+              className="font-serif font-bold text-white leading-none tracking-[-0.04em]" 
+              style={{ fontSize: "clamp(60px, 8vw, 88px)" }}
+            >
               {s.n}
               <span className="font-normal text-[#86EFAC]">{s.u}</span>
             </div>
-            <div className="text-xs font-medium text-white/60 uppercase tracking-widest mt-3">{s.l}</div>
+            <div className="text-[11px] font-semibold text-white/50 uppercase tracking-[0.12em] mt-3">{s.l}</div>
           </div>
         ))}
       </div>
@@ -347,8 +365,10 @@ function SolutionCard({
 }) {
   return (
     <div
-      className={`relative bg-white rounded-2xl p-8 ${
-        hero ? "border-2 border-[#E8711A] border-t-[3px] border-t-[#E8711A]" : "border border-[#E5E7EB] border-t-[3px] border-t-[#1E6B31]"
+      className={`relative bg-white rounded-[20px] p-8 transition-all duration-250 ease-out hover:-translate-y-0.5 ${
+        hero 
+          ? "border-2 border-[#E8711A] border-t-[3px] border-t-[#E8711A] shadow-[0_0_0_4px_rgba(232,113,26,0.06),_0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_0_0_4px_rgba(232,113,26,0.06),_0_12px_32px_rgba(232,113,26,0.12)]" 
+          : "border border-[#E5E7EB] border-t-[3px] border-t-[#1E6B31] shadow-[0_1px_3px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.09)]"
       }`}
     >
       {hero && (
@@ -357,7 +377,7 @@ function SolutionCard({
         </div>
       )}
       <span
-        className={`inline-block text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-5 ${
+        className={`inline-block text-[11px] tracking-[0.1em] font-bold px-[10px] py-[4px] rounded-[6px] mb-5 ${
           hero ? "bg-[#FEF3E8] text-[#E8711A]" : "bg-[#F2F8F4] text-[#1E6B31]"
         }`}
       >
@@ -375,11 +395,11 @@ function SolutionCard({
         </div>
       )}
 
-      <div className="text-xs font-bold tracking-[0.1em] text-[#9CA3AF] uppercase mb-2">PHÙ HỢP:</div>
+      <div className="text-[10px] tracking-[0.12em] text-[#9CA3AF] font-bold uppercase mb-2">PHÙ HỢP:</div>
       <ul className="space-y-1.5">
         {fit.map((f) => (
           <li key={f} className="text-sm text-[#374151]">
-            <span className="text-[#1E6B31]">→ </span>{f}
+            <span className={hero ? "text-[#E8711A]" : "text-[#1E6B31]"}>→ </span>{f}
           </li>
         ))}
       </ul>
@@ -400,8 +420,7 @@ function SolutionCard({
       {hero ? (
         <a
           href="#dat-hang"
-          className="block text-center bg-[#E8711A] text-white font-bold py-3 rounded-xl mt-6"
-          style={{ boxShadow: "0 4px 16px rgba(232,113,26,0.3)" }}
+          className="block text-center bg-[#E8711A] text-white font-bold py-3 rounded-xl mt-6 shadow-[0_4px_16px_rgba(232,113,26,0.3)]"
         >
           Đặt ngay sản phẩm Hero →
         </a>
@@ -451,15 +470,13 @@ function Products() {
           {products.map((p) => (
             <div
               key={p.name}
-              className={`bg-white border border-[#E5E7EB] rounded-2xl overflow-hidden hover:border-[#1E6B31] transition-all duration-200 ${
-                p.hero ? "ring-2 ring-[#E8711A]/20" : ""
-              }`}
+              className="bg-white border border-[#E5E7EB] rounded-[20px] overflow-hidden hover:border-[#1E6B31] hover:shadow-[0_6px_20px_rgba(0,0,0,0.07)] transition-all duration-200"
             >
-              <div className="relative h-48 bg-[#F2F8F4] flex items-center justify-center">
+              <div className="relative bg-[#F4F8F5] flex items-center justify-center" style={{ height: "180px" }}>
                 <div className="absolute top-3 left-3 text-xs font-bold bg-white text-[#1E6B31] px-2 py-1 rounded-md">
                   {p.tag}
                 </div>
-                <span className="font-serif italic text-2xl text-[#1E6B31]/60 px-6 text-center">{p.name}</span>
+                <span className="font-serif italic text-2xl text-[#1E6B31] opacity-50 px-6 text-center">{p.name}</span>
               </div>
               <div className="p-7">
                 <div className="font-bold text-lg text-[#111111] mb-1">{p.name}</div>
@@ -475,15 +492,15 @@ function Products() {
                 <div className="border-t border-[#E5E7EB] mb-5" />
                 <div className="flex justify-between items-center gap-3 flex-wrap">
                   <div>
-                    <div className="font-serif font-bold text-2xl text-[#1E6B31]">{p.price}</div>
+                    <div className="font-serif font-bold text-[26px] text-[#1E6B31]">{p.price}</div>
                     <div className="text-xs text-[#9CA3AF]">/ gói 5kg</div>
                     {p.note && <div className="italic text-xs text-[#9CA3AF] mt-1">{p.note}</div>}
                   </div>
                   <div className="flex gap-2">
-                    <button className="border border-[#E5E7EB] text-[#9CA3AF] text-xs px-3 py-1.5 rounded-lg hover:border-[#1E6B31] hover:text-[#1E6B31] transition">
+                    <button className="border border-[#E5E7EB] text-[#9CA3AF] text-[12px] px-3 py-1.5 rounded-[8px] hover:border-[#1E6B31] hover:text-[#1E6B31] transition">
                       Xem TDS
                     </button>
-                    <button className="bg-[#E8711A] text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
+                    <button className="bg-[#E8711A] text-white text-[12px] font-semibold px-3 py-1.5 rounded-[8px] shadow-none">
                       Đặt mua
                     </button>
                   </div>
@@ -541,7 +558,7 @@ function OrderForm() {
         />
         <form
           onSubmit={(e) => { e.preventDefault(); alert("Cảm ơn! Chúng tôi sẽ liên hệ trong 30 phút."); }}
-          className="max-w-2xl mx-auto bg-white rounded-2xl p-6 md:p-10 border border-[#E5E7EB]"
+          className="max-w-2xl mx-auto bg-white border border-[#E5E7EB] rounded-[20px] p-6 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.05)]"
         >
           {/* STEP 01 */}
           <StepLabel>01 · Chọn hệ sơn</StepLabel>
@@ -552,7 +569,7 @@ function OrderForm() {
                 <label
                   key={it.t}
                   className={`flex gap-4 items-center rounded-xl p-4 cursor-pointer transition-all duration-200 ${
-                    selected ? "border-[#E8711A] bg-[#FEFBF8] border" : "border border-[#E5E7EB] hover:border-[#1E6B31]/40"
+                    selected ? "border-[1.5px] border-[#E8711A] bg-[#FDFAF7]" : "border border-[#E5E7EB] hover:border-[#D1D5DB]"
                   }`}
                 >
                   <input type="radio" name="paint-system" aria-label={it.t} className="sr-only" checked={selected} onChange={() => setSystem(i)} />
@@ -585,7 +602,7 @@ function OrderForm() {
                     key={s.t}
                     onClick={() => setSize(i)}
                     className={`rounded-xl p-4 text-center transition-all duration-200 ${
-                      selected ? "border-[#1E6B31] bg-[#F2F8F4] border" : "border border-[#E5E7EB] hover:border-[#1E6B31]/40"
+                      selected ? "border-[#1E6B31] bg-[#F2F8F4] border" : "border border-[#E5E7EB] hover:border-[#D1D5DB]"
                     }`}
                   >
                     <div className="font-semibold text-sm text-[#111111]">{s.t}</div>
@@ -638,8 +655,7 @@ function OrderForm() {
           <div className="mt-8 border-t border-[#E5E7EB] pt-8">
             <button
               type="submit"
-              className="w-full bg-[#E8711A] text-white font-bold py-4 rounded-xl text-base transition-all hover:-translate-y-0.5"
-              style={{ boxShadow: "0 4px 20px rgba(232,113,26,0.35)" }}
+              className="w-full bg-[#E8711A] text-white font-bold py-4 px-6 rounded-xl text-[15px] shadow-[0_4px_16px_rgba(232,113,26,0.3)] transition-all duration-200 hover:shadow-[0_8px_24px_rgba(232,113,26,0.4)] hover:-translate-y-px"
             >
               Đặt hàng ngay — Giao toàn quốc
             </button>
@@ -677,7 +693,7 @@ function OrderForm() {
   );
 }
 const inputCls =
-  "border border-[#D1D5DB] rounded-xl px-4 py-3 text-sm w-full focus:outline-none focus:border-[#1E6B31] focus:ring-2 focus:ring-[#1E6B31]/10 placeholder:text-[#6B7280]";
+  "border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm w-full focus:outline-none focus:border-[#1E6B31] focus:ring-[3px] focus:ring-[#1E6B31]/8 placeholder:text-[#D1D5DB]";
 
 /* ============ PROJECTS ============ */
 function Projects() {
@@ -743,12 +759,17 @@ function Certificates() {
           {certs.map((c) => (
             <div
               key={c.n}
-              className="bg-white border border-[#E5E7EB] border-t-2 border-t-[#1E6B31] rounded-2xl p-8 hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-[#E5E7EB] border-t-2 border-t-[#1E6B31] rounded-[16px] p-8 shadow-none hover:-translate-y-[2px] hover:shadow-[0_6px_20px_rgba(0,0,0,0.07)] hover:border-[#1E6B31] transition-all duration-300"
             >
-              <div className="font-serif text-3xl text-[#111111] font-semibold mb-1 tracking-tight">{c.n}</div>
-              <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.2em] mb-4">{c.o}</div>
+              <div 
+                className="font-serif text-[#111111] font-semibold mb-1 tracking-[-0.02em]"
+                style={{ fontSize: "clamp(20px, 2.5vw, 26px)" }}
+              >
+                {c.n}
+              </div>
+              <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.12em] mb-4">{c.o}</div>
               <div className="h-px bg-[#E5E7EB] mb-4" />
-              <div className="text-xs text-[#6B7280] leading-5">{c.d}</div>
+              <div className="text-[13px] text-[#6B7280] leading-[1.6]">{c.d}</div>
             </div>
           ))}
         </div>
@@ -769,17 +790,24 @@ function FAQ() {
           {items.map(([q, a], i) => {
             const isOpen = open === i;
             return (
-              <div key={q} className="border border-[#E5E7EB] rounded-2xl overflow-hidden hover:border-[#1E6B31]/40 transition-all duration-200">
+              <div 
+                key={q} 
+                className={`border rounded-[14px] overflow-hidden transition-all duration-200 ${
+                  isOpen 
+                    ? "border-[#1E6B31] border-l-[3px] border-l-[#1E6B31]" 
+                    : "border-[#E5E7EB] hover:border-[#D1D5DB]"
+                }`}
+              >
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   className="w-full flex justify-between items-center px-7 py-5 bg-white text-left"
                 >
-                  <span className="font-semibold text-[#111111] text-sm">{q}</span>
+                  <span className="font-semibold text-[#111111] text-[15px]">{q}</span>
                   <ChevronDown size={16} className={`text-[#9CA3AF] transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </button>
                 {isOpen && (
-                  <div className="px-7 pb-6 text-sm text-[#6B7280] leading-6 border-t border-[#E5E7EB] pt-4">{a}</div>
+                  <div className="px-7 pb-6 text-[14px] text-[#6B7280] leading-[1.7] border-t border-[#E5E7EB] pt-4">{a}</div>
                 )}
               </div>
             );
@@ -793,14 +821,28 @@ function FAQ() {
 /* ============ FOOTER CTA ============ */
 function FooterCTA() {
   return (
-    <section className="py-28 md:py-[140px]" style={{ background: "linear-gradient(135deg, #111111 0%, #1E3A2A 100%)" }}>
-      <div className="mx-auto max-w-xl px-6 text-center">
+    <section 
+      className="py-28 md:py-[140px] relative overflow-hidden" 
+      style={{ background: "linear-gradient(160deg, #0F2318 0%, #1A4A2A 50%, #1E3A2A 100%)" }}
+    >
+      {/* Decorative circle */}
+      <div 
+        className="absolute rounded-full pointer-events-none" 
+        style={{
+          width: "384px",
+          height: "384px",
+          border: "1px solid rgba(255,255,255,0.04)",
+          top: "-120px",
+          right: "-80px"
+        }}
+      />
+      <div className="mx-auto max-w-xl px-6 text-center relative z-10">
         <div className="flex items-center justify-center gap-2 mb-4">
           <div className="w-8 h-px bg-[#86EFAC]" />
           <span className="text-xs font-semibold tracking-[0.12em] uppercase text-[#86EFAC]">SẴN SÀNG CHUYỂN ĐỔI</span>
           <div className="w-8 h-px bg-[#86EFAC]" />
         </div>
-        <h2 className="font-serif font-semibold text-white mb-2 leading-[1.1]" style={{ fontSize: "clamp(34px, 5vw, 52px)" }}>
+        <h2 className="font-serif font-semibold text-white mb-2 leading-[1.1] tracking-[-0.03em]" style={{ fontSize: "clamp(34px, 5vw, 52px)" }}>
           Sẵn sàng chuyển sang
           <span className="block italic font-normal text-[#86EFAC]">sơn kim loại hệ nước?</span>
         </h2>
