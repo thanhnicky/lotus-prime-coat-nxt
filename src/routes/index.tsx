@@ -613,16 +613,16 @@ function OrderForm() {
           <div className="mt-8">
             <StepLabel>03 · Thông tin giao hàng</StepLabel>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input required placeholder="Họ và tên *" className={inputCls} />
-              <input required type="tel" placeholder="Số điện thoại *" className={inputCls} />
+              <input id="order-name" required aria-label="Họ và tên" placeholder="Họ và tên *" className={inputCls} />
+              <input id="order-phone" required type="tel" aria-label="Số điện thoại" placeholder="Số điện thoại *" className={inputCls} />
             </div>
-            <input required placeholder="Địa chỉ giao hàng *" className={`${inputCls} mt-4`} />
-            <input placeholder="VD: RAL 7035 xám sáng (không bắt buộc)" className={`${inputCls} mt-4`} />
+            <input id="order-address" required aria-label="Địa chỉ giao hàng" placeholder="Địa chỉ giao hàng *" className={`${inputCls} mt-4`} />
+            <input id="order-color" aria-label="Mã màu sơn (không bắt buộc)" placeholder="VD: RAL 7035 xám sáng (không bắt buộc)" className={`${inputCls} mt-4`} />
           </div>
 
           {/* Discount */}
           <div className="mt-6 flex gap-3 flex-wrap">
-            <input placeholder="Mã ưu đãi: TRATRUOC" className={`${inputCls} flex-1 min-w-[200px]`} />
+            <input id="order-promo" aria-label="Mã ưu đãi" placeholder="Mã ưu đãi: TRATRUOC" className={`${inputCls} flex-1 min-w-[200px]`} />
             <button type="button" className="border border-[#1E6B31] text-[#1E6B31] font-semibold px-4 py-3 rounded-xl text-sm">
               Áp dụng
             </button>
