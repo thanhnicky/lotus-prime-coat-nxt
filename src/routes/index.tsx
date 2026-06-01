@@ -3,13 +3,61 @@ import { useEffect, useState } from "react";
 import { Check, ChevronDown, Menu, Phone, X } from "lucide-react";
 import heroImg from "@/assets/hero-steel-worker.jpg";
 
+const FAQ_ITEMS: [string, string][] = [
+  ["Sơn hệ nước có bám được trên sắt mạ kẽm không?", "Có. Metal Coat Primer và Metal Coat 2in1 DTM bám trực tiếp lên mạ kẽm mà không cần xử lý bề mặt phức tạp."],
+  ["Khác gì so với sơn dung môi truyền thống?", "Không mùi hắc, không bắt lửa, không VOC cao. Độ bền và chống gỉ tương đương hoặc tốt hơn khi thi công đúng quy trình."],
+  ["Sơn 2in1 có thực sự không cần lớp lót riêng không?", "Đúng. DTM (Direct To Metal) — sơn thẳng lên kim loại đã làm sạch. Phù hợp nhất cho sắt hộp mạ kẽm, cổng sắt, hàng rào."],
+  ["Thời gian khô bao lâu?", "Khô bề mặt 30–60 phút. Khô hoàn toàn 24 giờ. Có thể sơn lớp tiếp theo sau 2–4 giờ."],
+  ["Sơn 2K pha tỷ lệ thế nào?", "1kg sơn + 150g chất đóng rắn LH5 (tỷ lệ 15%). Trộn đều, dùng trong 4–6 giờ."],
+  ["Mua số lượng lớn có giá đặc biệt không?", "Có. Đơn từ 2,999,000₫ miễn phí ship. Nhà máy, xưởng mua thường xuyên có chính sách riêng — liên hệ Zalo."],
+  ["Có hỗ trợ kỹ thuật sau bán hàng không?", "Có. Kỹ thuật viên hỗ trợ 1-1 qua Zalo miễn phí: chọn sản phẩm, quy trình thi công, xử lý sự cố bề mặt."],
+];
+
+const PRODUCT_LD = [
+  { name: "Metal Coat Primer", price: "217080" },
+  { name: "Metal Coat Finish 1K", price: "237600" },
+  { name: "Metal Coat Finish 2K", price: "199800" },
+  { name: "Metal Coat 2in1", price: "254880" },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Lotus Paint — Metal Coat | Sơn kim loại hệ nước cao cấp" },
       { name: "description", content: "Sơn kim loại gốc nước Lotus Metal Coat — không mùi, không bắt lửa, đạt chuẩn EN71-3, ROHS, ASTM F963. Bảo vệ kim loại bền vững, an toàn." },
-      { property: "og:title", content: "Lotus Paint — Metal Coat" },
+      { property: "og:title", content: "Lotus Paint — Metal Coat | Hệ sơn kim loại gốc nước cao cấp" },
       { property: "og:description", content: "Hệ sơn kim loại gốc nước — thay thế hoàn toàn sơn dung môi." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ_ITEMS.map(([q, a]) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": PRODUCT_LD.map((p) => ({
+            "@type": "Product",
+            name: p.name,
+            brand: { "@type": "Brand", name: "Lotus Paint" },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "VND",
+              price: p.price,
+              availability: "https://schema.org/InStock",
+            },
+          })),
+        }),
+      },
     ],
   }),
   component: LandingPage,
