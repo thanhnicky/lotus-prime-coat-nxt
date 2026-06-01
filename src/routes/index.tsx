@@ -759,15 +759,7 @@ function Certificates() {
 
 /* ============ FAQ ============ */
 function FAQ() {
-  const items = [
-    ["Sơn hệ nước có bám được trên sắt mạ kẽm không?", "Có. Metal Coat Primer và Metal Coat 2in1 DTM bám trực tiếp lên mạ kẽm mà không cần xử lý bề mặt phức tạp."],
-    ["Khác gì so với sơn dung môi truyền thống?", "Không mùi hắc, không bắt lửa, không VOC cao. Độ bền và chống gỉ tương đương hoặc tốt hơn khi thi công đúng quy trình."],
-    ["Sơn 2in1 có thực sự không cần lớp lót riêng không?", "Đúng. DTM (Direct To Metal) — sơn thẳng lên kim loại đã làm sạch. Phù hợp nhất cho sắt hộp mạ kẽm, cổng sắt, hàng rào."],
-    ["Thời gian khô bao lâu?", "Khô bề mặt 30–60 phút. Khô hoàn toàn 24 giờ. Có thể sơn lớp tiếp theo sau 2–4 giờ."],
-    ["Sơn 2K pha tỷ lệ thế nào?", "1kg sơn + 150g chất đóng rắn LH5 (tỷ lệ 15%). Trộn đều, dùng trong 4–6 giờ."],
-    ["Mua số lượng lớn có giá đặc biệt không?", "Có. Đơn từ 2,999,000₫ miễn phí ship. Nhà máy, xưởng mua thường xuyên có chính sách riêng — liên hệ Zalo."],
-    ["Có hỗ trợ kỹ thuật sau bán hàng không?", "Có. Kỹ thuật viên hỗ trợ 1-1 qua Zalo miễn phí: chọn sản phẩm, quy trình thi công, xử lý sự cố bề mặt."],
-  ];
+  const items = FAQ_ITEMS;
   const [open, setOpen] = useState(0);
   return (
     <section id="Hỏi đáp" className="bg-white py-24 md:py-[120px]">
