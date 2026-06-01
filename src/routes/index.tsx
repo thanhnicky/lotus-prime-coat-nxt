@@ -77,7 +77,7 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#111111]">
+    <div className="min-h-screen bg-white text-[#0F0F0F]">
       <Navbar scrolled={scrolled} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
       <main>
         <Hero />
@@ -110,22 +110,22 @@ function Navbar({ scrolled, mobileOpen, setMobileOpen }: { scrolled: boolean; mo
         <a href="/" className="flex items-baseline">
           <span className="text-2xl font-bold" style={{ color: GREEN }}>Lotus</span>
           <span className="text-2xl font-bold ml-1" style={{ color: ORANGE }}>Paint</span>
-          <span className="text-sm font-normal text-[#9CA3AF] ml-2">· Metal Coat</span>
+          <span className="text-sm font-normal text-[#BDBDBD] ml-2">· Metal Coat</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a key={l} href={`#${l}`} className="text-sm font-medium text-gray-600 hover:text-[#1E6B31] transition">
+            <a key={l} href={`#${l}`} className="text-sm font-medium text-[#4B5563] hover:text-[#0F0F0F] transition">
               {l}
             </a>
           ))}
         </nav>
 
         <div className="hidden md:flex items-center">
-          <a href="tel:0943966662" className="text-sm font-semibold text-gray-700 mr-4">0943 966 662</a>
+          <a href="tel:0943966662" className="text-sm font-semibold text-[#0F0F0F] mr-4">0943 966 662</a>
           <a
             href="https://zalo.me/0943966662"
-            className="border border-[#1E6B31] text-[#1E6B31] text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#1E6B31] hover:text-white transition-all duration-200"
+            className="border-[1.5px] border-[#1E6B31] text-[#1E6B31] text-sm font-semibold px-4 py-2 rounded-[8px] hover:bg-[#1E6B31] hover:text-white transition-all duration-200"
           >
             Zalo kỹ thuật
           </a>
@@ -139,12 +139,12 @@ function Navbar({ scrolled, mobileOpen, setMobileOpen }: { scrolled: boolean; mo
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-[#E5E7EB] px-6 py-4 space-y-3">
           {links.map((l) => (
-            <a key={l} href={`#${l}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-gray-700">
+            <a key={l} href={`#${l}`} onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-[#4B5563]">
               {l}
             </a>
           ))}
-          <a href="tel:0943966662" className="block text-sm font-semibold text-gray-700">0943 966 662</a>
-          <a href="https://zalo.me/0943966662" className="block text-center border border-[#1E6B31] text-[#1E6B31] text-sm font-semibold px-4 py-2 rounded-lg">
+          <a href="tel:0943966662" className="block text-sm font-semibold text-[#0F0F0F]">0943 966 662</a>
+          <a href="https://zalo.me/0943966662" className="block text-center border-[1.5px] border-[#1E6B31] text-[#1E6B31] text-sm font-semibold px-4 py-2 rounded-[8px]">
             Zalo kỹ thuật
           </a>
         </div>
@@ -157,7 +157,7 @@ function Navbar({ scrolled, mobileOpen, setMobileOpen }: { scrolled: boolean; mo
 function Hero() {
   return (
     <section 
-      className="pt-28 pb-20"
+      className="pt-28 pb-16"
       style={{
         backgroundColor: "#FAFAF8"
       }}
@@ -165,18 +165,19 @@ function Hero() {
       <div className="mx-auto max-w-[1120px] px-6 grid lg:grid-cols-[52%_48%] gap-10 lg:gap-16 items-center">
         <div className="order-2 lg:order-1">
           <div className="flex items-center gap-2 mb-8">
-            <div className="w-8 h-px bg-[#D1D5DB]" />
-            <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B7280]">
+            <div className="w-8 h-px bg-[#D4D4D4]" />
+            <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9CA3AF]">
               Sơn kim loại hệ nước
             </span>
+            <div className="w-8 h-px bg-[#D4D4D4]" />
           </div>
 
           <h1 className="font-serif mb-6 tracking-[-0.03em] leading-[1.05] text-[clamp(30px,4vw,44px)]">
-            <span className="block font-normal text-[#111111]">Bảo vệ kim loại bền vững —</span>
+            <span className="block font-normal text-[#0F0F0F]">Bảo vệ kim loại bền vững —</span>
             <span className="block italic font-light text-[#374151]">an toàn, thân thiện.</span>
           </h1>
 
-          <p className="text-base text-[#6B7280] leading-7 mb-10 max-w-[420px]">
+          <p className="text-base text-[#4B5563] leading-[1.65] mb-10 max-w-[420px]">
             Hệ sơn gốc nước thay thế hoàn toàn sơn dung môi.<br />
             Không mùi · Không bắt lửa · Đạt chuẩn EN71-3 · ROHS · ASTM F963.
           </p>
@@ -196,7 +197,7 @@ function Hero() {
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#E5E7EB] pt-6 mt-8">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#EBEBEB] pt-6 mt-8">
             {["12+ năm kinh nghiệm", "Giao hàng toàn quốc", "Hoàn tiền 100%"].map((t) => (
               <div key={t} className="flex items-center gap-2">
                 <Check className="text-[#1E6B31] w-3.5 h-3.5" strokeWidth={2.5} />
@@ -211,8 +212,8 @@ function Hero() {
           <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg px-5 py-3.5 flex items-center gap-3">
             <Check size={18} className="text-[#1E6B31]" strokeWidth={2.5} />
             <div>
-              <div className="font-semibold text-sm text-[#111111]">Đạt chuẩn quốc tế</div>
-              <div className="text-xs text-[#6B7280] mt-0.5">EN71-3 · ROHS · ASTM F963</div>
+              <div className="font-semibold text-sm text-[#0F0F0F]">Đạt chuẩn quốc tế</div>
+              <div className="text-xs text-[#4B5563] mt-0.5">EN71-3 · ROHS · ASTM F963</div>
             </div>
           </div>
         </div>
@@ -226,18 +227,18 @@ function SectionHeader({ label, h2, italic, sub, h2ClassName }: { label: string;
   return (
     <div className="text-center mb-12 md:mb-16">
       <div className="flex items-center justify-center gap-2 mb-4">
-        <div className="w-8 h-px bg-[#D1D5DB]" />
-        <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B7280]">{label}</span>
-        <div className="w-8 h-px bg-[#D1D5DB]" />
+        <div className="w-8 h-px bg-[#D4D4D4]" />
+        <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9CA3AF]">{label}</span>
+        <div className="w-8 h-px bg-[#D4D4D4]" />
       </div>
       <h2 
-        className={`font-serif font-semibold text-[#111111] tracking-[-0.03em] leading-[1.08] max-w-2xl mx-auto ${h2ClassName || ""}`} 
+        className={`font-serif font-semibold text-[#0F0F0F] tracking-[-0.03em] leading-[1.06] max-w-2xl mx-auto ${h2ClassName || ""}`} 
         style={h2ClassName ? undefined : { fontSize: "clamp(30px, 4vw, 36px)" }}
       >
         {h2}
         {italic && <span className="block italic font-normal">{italic}</span>}
       </h2>
-      {sub && <p className="text-base text-[#6B7280] leading-[1.6] mt-3 max-w-lg mx-auto">{sub}</p>}
+      {sub && <p className="text-base text-[#6B7280] leading-[1.65] mt-3 max-w-[44ch] mx-auto text-center">{sub}</p>}
     </div>
   );
 }
@@ -276,14 +277,16 @@ function WhySwitch() {
 function Card({ index, t, d }: { index: number; t: string; d: string }) {
   return (
     <div 
-      className="bg-white pl-[28px] py-6 rounded-r-[16px] transition-colors duration-200 hover:bg-[#F8FBF9]"
-      style={{ borderLeft: "3px solid #1E6B31" }}
+      className="bg-[#FAFAFA] pl-[28px] py-6 rounded-r-[16px] transition-all duration-200 hover:bg-[#FFFFFF]"
+      style={{ borderLeft: "2px solid #D4D4D4" }}
+      onMouseEnter={(e) => e.currentTarget.style.borderLeftColor = "#1E6B31"}
+      onMouseLeave={(e) => e.currentTarget.style.borderLeftColor = "#D4D4D4"}
     >
-      <div className="text-[13px] font-semibold text-[#D1D5DB] mb-3 tracking-tight">
+      <div className="text-[12px] font-medium text-[#CFCFCF] mb-3 tracking-tight">
         {String(index).padStart(2, "0")}
       </div>
-      <div className="font-bold text-[#111111] text-[15px] mb-2">{t}</div>
-      <div className="text-[14px] text-[#6B7280] leading-[1.6]">{d}</div>
+      <div className="font-bold text-[#0F0F0F] text-[15px] mb-2">{t}</div>
+      <div className="text-[14px] text-[#6B7280] leading-[1.65]">{d}</div>
     </div>
   );
 }
@@ -297,22 +300,22 @@ function TrustNumbers() {
     { n: "100", u: "%", l: "Gốc nước — không dung môi" },
   ];
   return (
-    <section className="bg-[#111111] py-20">
+    <section className="bg-[#0F0F0F] py-20">
       <div className="mx-auto max-w-[1120px] px-6 grid grid-cols-2 lg:grid-cols-4 gap-y-10">
         {stats.map((s, idx) => (
           <div 
             key={s.l} 
             className="text-center"
-            style={idx > 0 ? { borderLeft: "1px solid rgba(255,255,255,0.08)" } : undefined}
+            style={idx > 0 ? { borderLeft: "1px solid rgba(255,255,255,0.06)" } : undefined}
           >
             <div 
-              className="font-serif font-bold text-white leading-none tracking-[-0.04em]" 
+              className="font-serif font-bold text-white leading-none tracking-[-0.05em]" 
               style={{ fontSize: "clamp(60px, 8vw, 88px)" }}
             >
               {s.n}
               <span className="font-normal text-[#86EFAC]">{s.u}</span>
             </div>
-            <div className="text-[11px] font-semibold text-white/50 uppercase tracking-[0.12em] mt-3">{s.l}</div>
+            <div className="text-[11px] font-semibold text-white/40 uppercase tracking-[0.1em] mt-3">{s.l}</div>
           </div>
         ))}
       </div>
@@ -364,10 +367,10 @@ function SolutionCard({
 }) {
   return (
     <div
-      className={`relative bg-white rounded-[20px] p-8 transition-all duration-250 ease-out hover:-translate-y-0.5 ${
+      className={`relative bg-white rounded-[18px] p-8 transition-all duration-200 ${
         hero 
-          ? "border-2 border-[#E8711A] border-t-[3px] border-t-[#E8711A] shadow-[0_0_0_4px_rgba(232,113,26,0.06),_0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_0_0_4px_rgba(232,113,26,0.06),_0_12px_32px_rgba(232,113,26,0.12)]" 
-          : "border border-[#E5E7EB] border-t-[3px] border-t-[#1E6B31] shadow-[0_1px_3px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.09)]"
+          ? "bg-[#FFFCFA] border-[1.5px] border-[#E8711A] border-t-[1.5px] border-t-[#E8711A] shadow-[0_0_0_4px_rgba(232,113,26,0.05)] hover:shadow-[0_0_0_4px_rgba(232,113,26,0.05),_0_4px_20px_rgba(0,0,0,0.07)] hover:-translate-y-[2px]" 
+          : "bg-[#FFFFFF] border border-[#EBEBEB] border-t-[2px] border-t-[#1E6B31] shadow-none hover:shadow-[0_4px_20px_rgba(0,0,0,0.07)] hover:-translate-y-[2px]"
       }`}
     >
       {hero && (
@@ -376,13 +379,13 @@ function SolutionCard({
         </div>
       )}
       <span
-        className={`inline-block text-[11px] tracking-[0.1em] font-bold px-[10px] py-[4px] rounded-[6px] mb-5 ${
-          hero ? "bg-[#FEF3E8] text-[#E8711A]" : "bg-[#F2F8F4] text-[#1E6B31]"
+        className={`inline-block text-[10px] tracking-[0.1em] font-bold px-[10px] py-[4px] rounded-[6px] mb-5 ${
+          hero ? "bg-[#FEF3E8] text-[#92400E] border border-[#FDDBB8]" : "bg-[#F3F4F6] text-[#374151]"
         }`}
       >
         {badge}
       </span>
-      <h3 className="font-sans font-bold text-xl text-[#111111] mb-4">{title}</h3>
+      <h3 className="font-sans font-bold text-xl text-[#0F0F0F] mb-4">{title}</h3>
 
       {pills && (
         <div className="flex flex-wrap gap-2 my-5">
@@ -397,13 +400,13 @@ function SolutionCard({
       <div className="text-[10px] tracking-[0.12em] text-[#9CA3AF] font-bold uppercase mb-2">PHÙ HỢP:</div>
       <ul className="space-y-1.5">
         {fit.map((f) => (
-          <li key={f} className="text-sm text-[#374151]">
+          <li key={f} className="text-sm text-[#4B5563]">
             <span className={hero ? "text-[#E8711A]" : "text-[#1E6B31]"}>→ </span>{f}
           </li>
         ))}
       </ul>
 
-      <div className="border-t border-[#E5E7EB] my-6" />
+      <div className="border-t border-[#EBEBEB] my-6" />
 
       <div className="space-y-2">
         {steps.map((s, i) => (
@@ -411,7 +414,7 @@ function SolutionCard({
             <span className={`${hero ? "bg-[#E8711A]" : "bg-[#1E6B31]"} text-white text-xs rounded-full px-2 py-0.5 mr-2 font-semibold`}>
               {hero ? stepLabel : String(i + 1).padStart(2, "0")}
             </span>
-            <span className="text-sm text-[#374151]">{s}</span>
+            <span className="text-sm text-[#4B5563]">{s}</span>
           </div>
         ))}
       </div>
@@ -469,7 +472,7 @@ function Products() {
           {products.map((p) => (
             <div
               key={p.name}
-              className="bg-white border border-[#E5E7EB] rounded-[20px] overflow-hidden hover:border-[#1E6B31] hover:shadow-[0_6px_20px_rgba(0,0,0,0.07)] transition-all duration-200"
+              className="bg-white border border-[#EBEBEB] rounded-[20px] overflow-hidden hover:border-[#1E6B31] hover:shadow-[0_6px_20px_rgba(0,0,0,0.07)] transition-all duration-200"
             >
               <div className="relative bg-[#F4F8F5] flex items-center justify-center" style={{ height: "180px" }}>
                 <div className="absolute top-3 left-3 text-xs font-bold bg-white text-[#1E6B31] px-2 py-1 rounded-md">
@@ -478,17 +481,17 @@ function Products() {
                 <span className="font-serif italic text-2xl text-[#1E6B31] opacity-50 px-6 text-center">{p.name}</span>
               </div>
               <div className="p-7">
-                <div className="font-bold text-lg text-[#111111] mb-1">{p.name}</div>
+                <div className="font-bold text-lg text-[#0F0F0F] mb-1">{p.name}</div>
                 <div className="text-sm text-[#6B7280] mb-5">{p.desc}</div>
                 <ul className="space-y-2 mb-6">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
                       <span className="text-[#1E6B31] font-bold text-xs mt-0.5 flex-shrink-0">→</span>
-                      <span className="text-sm text-[#374151]">{f}</span>
+                      <span className="text-sm text-[#4B5563]">{f}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="border-t border-[#E5E7EB] mb-5" />
+                <div className="border-t border-[#EBEBEB] mb-5" />
                 <div className="flex justify-between items-center gap-3 flex-wrap">
                   <div>
                     <div className="font-serif font-bold text-[26px] text-[#1E6B31]">{p.price}</div>
@@ -496,7 +499,7 @@ function Products() {
                     {p.note && <div className="italic text-xs text-[#9CA3AF] mt-1">{p.note}</div>}
                   </div>
                   <div className="flex gap-2">
-                    <button className="border border-[#E5E7EB] text-[#9CA3AF] text-[12px] px-3 py-1.5 rounded-[8px] hover:border-[#1E6B31] hover:text-[#1E6B31] transition">
+                    <button className="border border-[#EBEBEB] text-[#9CA3AF] text-[12px] px-3 py-1.5 rounded-[8px] hover:border-[#1E6B31] hover:text-[#1E6B31] transition">
                       Xem TDS
                     </button>
                     <button className="bg-[#E8711A] text-white text-[12px] font-semibold px-3 py-1.5 rounded-[8px] shadow-none">
@@ -557,7 +560,7 @@ function OrderForm() {
         />
         <form
           onSubmit={(e) => { e.preventDefault(); alert("Cảm ơn! Chúng tôi sẽ liên hệ trong 30 phút."); }}
-          className="max-w-2xl mx-auto bg-white border border-[#E5E7EB] rounded-[20px] p-6 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.05)]"
+          className="max-w-2xl mx-auto bg-white border border-[#EBEBEB] rounded-[20px] p-6 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.05)]"
         >
           {/* STEP 01 */}
           <StepLabel>01 · Chọn hệ sơn</StepLabel>
@@ -568,7 +571,7 @@ function OrderForm() {
                 <label
                   key={it.t}
                   className={`flex gap-4 items-center rounded-xl p-4 cursor-pointer transition-all duration-200 ${
-                    selected ? "border-[1.5px] border-[#E8711A] bg-[#FDFAF7]" : "border border-[#E5E7EB] hover:border-[#D1D5DB]"
+                    selected ? "border-[1.5px] border-[#E8711A] bg-[#FDFAF7]" : "border border-[#EBEBEB] hover:border-[#D1D5DB]"
                   }`}
                 >
                   <input type="radio" name="paint-system" aria-label={it.t} className="sr-only" checked={selected} onChange={() => setSystem(i)} />
@@ -580,7 +583,7 @@ function OrderForm() {
                     {selected && <span className="w-2.5 h-2.5 rounded-full bg-[#E8711A]" />}
                   </span>
                   <span className="flex-1">
-                    <span className="block font-semibold text-sm text-[#111111]">{it.t}</span>
+                    <span className="block font-semibold text-sm text-[#0F0F0F]">{it.t}</span>
                     <span className="block text-xs text-[#9CA3AF] mt-0.5">{it.s}</span>
                   </span>
                   <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${it.tagCls}`}>{it.tag}</span>
@@ -601,10 +604,10 @@ function OrderForm() {
                     key={s.t}
                     onClick={() => setSize(i)}
                     className={`rounded-xl p-4 text-center transition-all duration-200 ${
-                      selected ? "border-[#1E6B31] bg-[#F2F8F4] border" : "border border-[#E5E7EB] hover:border-[#D1D5DB]"
+                      selected ? "border-[#1E6B31] bg-[#F2F8F4] border" : "border border-[#EBEBEB] hover:border-[#D1D5DB]"
                     }`}
                   >
-                    <div className="font-semibold text-sm text-[#111111]">{s.t}</div>
+                    <div className="font-semibold text-sm text-[#0F0F0F]">{s.t}</div>
                     <div className="text-xs text-[#9CA3AF]">{s.s}</div>
                   </button>
                 );
@@ -613,9 +616,9 @@ function OrderForm() {
 
             <div className="flex items-center gap-4 mt-4 flex-wrap">
               <span className="text-sm font-semibold text-[#374151]">Số lượng:</span>
-              <div className="border border-[#E5E7EB] rounded-xl overflow-hidden flex">
+              <div className="border border-[#EBEBEB] rounded-xl overflow-hidden flex">
                 <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="px-4 py-2 font-semibold">−</button>
-                <span className="px-4 py-2 font-semibold border-x border-[#E5E7EB] min-w-[3rem] text-center">{qty}</span>
+                <span className="px-4 py-2 font-semibold border-x border-[#EBEBEB] min-w-[3rem] text-center">{qty}</span>
                 <button type="button" onClick={() => setQty(qty + 1)} className="px-4 py-2 font-semibold">+</button>
               </div>
               <div className="ml-auto text-right">
@@ -651,7 +654,7 @@ function OrderForm() {
           </div>
 
           {/* Submit */}
-          <div className="mt-8 border-t border-[#E5E7EB] pt-8">
+          <div className="mt-8 border-t border-[#EBEBEB] pt-8">
             <button
               type="submit"
               className="w-full bg-[#E8711A] text-white font-bold py-4 px-6 rounded-xl text-[15px] shadow-[0_4px_16px_rgba(232,113,26,0.3)] transition-all duration-200 hover:shadow-[0_8px_24px_rgba(232,113,26,0.4)] hover:-translate-y-px"
@@ -661,9 +664,9 @@ function OrderForm() {
             <div className="mt-3 text-center text-xs text-[#9CA3AF]">Kỹ thuật viên xác nhận trong 30 phút</div>
 
             <div className="mt-8 mb-6 flex items-center gap-4">
-              <div className="flex-1 h-px bg-[#E5E7EB]" />
+              <div className="flex-1 h-px bg-[#EBEBEB]" />
               <span className="text-xs text-[#9CA3AF]">Hoặc công trình lớn, nhà máy</span>
-              <div className="flex-1 h-px bg-[#E5E7EB]" />
+              <div className="flex-1 h-px bg-[#EBEBEB]" />
             </div>
 
             <a
@@ -692,7 +695,7 @@ function OrderForm() {
   );
 }
 const inputCls =
-  "border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm w-full focus:outline-none focus:border-[#1E6B31] focus:ring-[3px] focus:ring-[#1E6B31]/8 placeholder:text-[#D1D5DB]";
+  "border border-[#EBEBEB] rounded-xl px-4 py-3 text-sm w-full focus:outline-none focus:border-[#1E6B31] focus:ring-[3px] focus:ring-[#1E6B31]/8 placeholder:text-[#D1D5DB]";
 
 /* ============ PROJECTS ============ */
 function Projects() {
@@ -714,14 +717,14 @@ function Projects() {
         />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {items.map((t, i) => (
-            <div key={t} className="rounded-2xl overflow-hidden aspect-[4/3] relative group cursor-pointer bg-[#F2F8F4] border border-[#E5E7EB]">
+            <div key={t} className="rounded-2xl overflow-hidden aspect-[4/3] relative group cursor-pointer bg-[#F2F8F4] border border-[#EBEBEB]">
               <div className="absolute inset-0 flex flex-col justify-between p-6">
                 <div className="font-serif italic text-sm text-[#1E6B31]/60">
                   {String(i + 1).padStart(2, "0")} / 06
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-[0.18em] text-[#1E6B31]/60 mb-1">Hạng mục</div>
-                  <div className="font-serif text-xl text-[#111111] leading-tight">{t}</div>
+                  <div className="font-serif text-xl text-[#0F0F0F] leading-tight">{t}</div>
                 </div>
               </div>
               <div className="absolute inset-0 bg-[#111111]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -758,17 +761,17 @@ function Certificates() {
           {certs.map((c) => (
             <div
               key={c.n}
-              className="bg-white border border-[#E5E7EB] border-t-2 border-t-[#1E6B31] rounded-[16px] p-8 shadow-none hover:-translate-y-[2px] hover:shadow-[0_6px_20px_rgba(0,0,0,0.07)] hover:border-[#1E6B31] transition-all duration-300"
+              className="bg-white border border-[#EBEBEB] border-t-2 border-t-[#1E6B31] rounded-[16px] p-8 shadow-none hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-300"
             >
               <div 
-                className="font-serif text-[#111111] font-semibold mb-1 tracking-[-0.02em]"
+                className="font-serif text-[#0F0F0F] font-extrabold mb-1 tracking-[-0.02em]"
                 style={{ fontSize: "clamp(20px, 2.5vw, 26px)" }}
               >
                 {c.n}
               </div>
-              <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.12em] mb-4">{c.o}</div>
-              <div className="h-px bg-[#E5E7EB] mb-4" />
-              <div className="text-[13px] text-[#6B7280] leading-[1.6]">{c.d}</div>
+              <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.1em] mb-4">{c.o}</div>
+              <div className="h-px bg-[#EBEBEB] mb-4" />
+              <div className="text-[13px] text-[#6B7280] leading-[1.65]">{c.d}</div>
             </div>
           ))}
         </div>
@@ -794,7 +797,7 @@ function FAQ() {
                 className={`border rounded-[14px] overflow-hidden transition-all duration-200 ${
                   isOpen 
                     ? "border-[#1E6B31] border-l-[3px] border-l-[#1E6B31]" 
-                    : "border-[#E5E7EB] hover:border-[#D1D5DB]"
+                    : "border-[#EBEBEB] hover:border-[#D1D5DB]"
                 }`}
               >
                 <button
@@ -802,11 +805,11 @@ function FAQ() {
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   className="w-full flex justify-between items-center px-7 py-5 bg-white text-left"
                 >
-                  <span className="font-semibold text-[#111111] text-[15px]">{q}</span>
+                  <span className="font-semibold text-[#0F0F0F] text-[15px]">{q}</span>
                   <ChevronDown size={16} className={`text-[#9CA3AF] transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </button>
                 {isOpen && (
-                  <div className="px-7 pb-6 text-[14px] text-[#6B7280] leading-[1.7] border-t border-[#E5E7EB] pt-4">{a}</div>
+                  <div className="px-7 pb-6 text-[14px] text-[#6B7280] leading-[1.65] border-t border-[#EBEBEB] pt-4">{a}</div>
                 )}
               </div>
             );
@@ -896,7 +899,7 @@ function FloatingButtons() {
       <a
         href="https://zalo.me/0943966662"
         className="fixed bottom-6 right-6 z-50 bg-[#0068FF] rounded-full w-14 h-14 flex items-center justify-center text-white font-black text-xl"
-        style={{ boxShadow: "0 4px 20px rgba(0,104,255,0.4)" }}
+        style={{ boxShadow: "0 4px 12px rgba(0,104,255,0.4)" }}
         aria-label="Zalo"
       >
         <span className="absolute inline-flex h-full w-full rounded-full ring-4 ring-[#0068FF]/30 animate-ping" />
@@ -905,7 +908,7 @@ function FloatingButtons() {
       <a
         href="tel:0943966662"
         className="fixed bottom-24 right-6 z-50 bg-[#E8711A] rounded-full w-12 h-12 flex items-center justify-center text-white"
-        style={{ boxShadow: "0 4px 16px rgba(232,113,26,0.4)" }}
+        style={{ boxShadow: "0 4px 12px rgba(232,113,26,0.4)" }}
         aria-label="Phone"
       >
         <Phone size={20} />
