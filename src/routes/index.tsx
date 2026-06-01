@@ -555,7 +555,7 @@ function OrderForm() {
                     selected ? "border-[#E8711A] bg-[#FEFBF8] border" : "border border-[#E5E7EB] hover:border-[#1E6B31]/40"
                   }`}
                 >
-                  <input type="radio" className="sr-only" checked={selected} onChange={() => setSystem(i)} />
+                  <input type="radio" name="paint-system" aria-label={it.t} className="sr-only" checked={selected} onChange={() => setSystem(i)} />
                   <span
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                       selected ? "border-[#E8711A]" : "border-[#D1D5DB]"
