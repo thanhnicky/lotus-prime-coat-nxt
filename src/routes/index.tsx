@@ -157,10 +157,9 @@ function Navbar({ scrolled, mobileOpen, setMobileOpen }: { scrolled: boolean; mo
 function Hero() {
   return (
     <section 
-      className="pt-28 pb-16"
+      className="pt-28 pb-20"
       style={{
-        backgroundColor: "#FAFAF8",
-        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'80\' height=\'80\' viewBox=\'0 0 80 80\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%231E6B31\' fill-opacity=\'0.03\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 0h40v40H0V0zm40 40h40v40H40V40z\'/%3E%3C/g%3E%3C/svg%3E")'
+        backgroundColor: "#FAFAF8"
       }}
     >
       <div className="mx-auto max-w-[1120px] px-6 grid lg:grid-cols-[52%_48%] gap-10 lg:gap-16 items-center">
@@ -177,7 +176,7 @@ function Hero() {
             <span className="block italic font-light text-[#374151]">an toàn, thân thiện.</span>
           </h1>
 
-          <p className="text-base text-[#6B7280] leading-7 mb-10 max-w-md">
+          <p className="text-base text-[#6B7280] leading-7 mb-10 max-w-[420px]">
             Hệ sơn gốc nước thay thế hoàn toàn sơn dung môi.<br />
             Không mùi · Không bắt lửa · Đạt chuẩn EN71-3 · ROHS · ASTM F963.
           </p>
@@ -253,7 +252,7 @@ function WhySwitch() {
     { t: "Nhiều nhà máy FDI yêu cầu", d: "Xu hướng bắt buộc. Chuyển sớm là lợi thế cạnh tranh." },
   ];
   return (
-    <section className="bg-white py-24 md:py-[120px]">
+    <section className="bg-white pt-20 md:pt-20">
       <div className="mx-auto max-w-[1120px] px-6">
         <SectionHeader
           label="XU HƯỚNG TẤT YẾU"
