@@ -677,7 +677,7 @@ function OrderForm() {
   );
 }
 const inputCls =
-  "border border-[#E5E7EB] rounded-xl px-4 py-3 text-sm w-full focus:outline-none focus:border-[#1E6B31] focus:ring-2 focus:ring-[#1E6B31]/10 placeholder:text-[#D1D5DB]";
+  "border border-[#D1D5DB] rounded-xl px-4 py-3 text-sm w-full focus:outline-none focus:border-[#1E6B31] focus:ring-2 focus:ring-[#1E6B31]/10 placeholder:text-[#6B7280]";
 
 /* ============ PROJECTS ============ */
 function Projects() {
