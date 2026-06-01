@@ -166,9 +166,9 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="font-serif mb-6 leading-[1.1]" style={{ fontSize: "clamp(36px, 5vw, 52px)" }}>
-            <span className="block font-semibold text-[#111111]">Bảo vệ kim loại bền vững</span>
-            <span className="block italic font-normal text-[#374151]">— an toàn, thân thiện.</span>
+          <h1 className="font-serif mb-6 leading-[1.1] text-3xl lg:text-[42px]">
+            <span className="block font-normal text-[#111111]">Bảo vệ kim loại bền vững —</span>
+            <span className="block italic font-light text-[#374151]">an toàn, thân thiện.</span>
           </h1>
 
           <p className="text-base text-[#6B7280] leading-7 mb-10">
@@ -218,7 +218,7 @@ function Hero() {
 }
 
 /* ============ SECTION HEADER ============ */
-function SectionHeader({ label, h2, italic, sub }: { label: string; h2: string; italic?: string; sub?: string }) {
+function SectionHeader({ label, h2, italic, sub, h2ClassName }: { label: string; h2: string; italic?: string; sub?: string; h2ClassName?: string }) {
   return (
     <div className="text-center mb-12 md:mb-16">
       <div className="flex items-center justify-center gap-2 mb-4">
@@ -226,7 +226,7 @@ function SectionHeader({ label, h2, italic, sub }: { label: string; h2: string; 
         <span className="text-xs font-semibold tracking-[0.12em] uppercase text-[#1E6B31]">{label}</span>
         <div className="w-8 h-px bg-[#1E6B31]" />
       </div>
-      <h2 className="font-serif font-semibold text-[#111111] leading-[1.15]" style={{ fontSize: "clamp(30px, 4vw, 44px)" }}>
+      <h2 className={`font-serif font-semibold text-[#111111] leading-[1.15] ${h2ClassName || ""}`} style={h2ClassName ? undefined : { fontSize: "clamp(30px, 4vw, 44px)" }}>
         {h2}
         {italic && <span className="block italic font-normal">{italic}</span>}
       </h2>
@@ -269,10 +269,10 @@ function WhySwitch() {
 function Card({ index, t, d }: { index: number; t: string; d: string }) {
   return (
     <div className="border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] transition-all duration-200">
-      <div className="font-serif text-2xl text-[#1E6B31] mb-5 tracking-tight">
+      <div className="font-serif text-2xl text-[#D1D5DB] mb-5 tracking-tight">
         {String(index).padStart(2, "0")}
       </div>
-      <div className="font-semibold text-[#111111] text-base mb-2">{t}</div>
+      <div className="font-sans font-bold text-[#111111] text-base mb-2">{t}</div>
       <div className="text-sm text-[#6B7280] leading-6">{d}</div>
     </div>
   );
@@ -446,7 +446,7 @@ function Products() {
   return (
     <section id="Sản phẩm" className="bg-white py-24 md:py-[120px]">
       <div className="mx-auto max-w-[1120px] px-6">
-        <SectionHeader label="DANH MỤC SẢN PHẨM" h2="Hệ sơn kim loại Lotus Metal Coat" />
+        <SectionHeader label="DANH MỤC SẢN PHẨM" h2="Hệ sơn kim loại Lotus Metal Coat" h2ClassName="text-2xl md:text-3xl lg:text-4xl lg:whitespace-nowrap" />
         <div className="grid md:grid-cols-2 gap-6">
           {products.map((p) => (
             <div
@@ -743,9 +743,9 @@ function Certificates() {
           {certs.map((c) => (
             <div
               key={c.n}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-[#E5E7EB] border-t-2 border-t-[#1E6B31] rounded-2xl p-8 hover:border-[#1E6B31] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="font-serif text-3xl text-[#1E6B31] font-semibold mb-1 tracking-tight">{c.n}</div>
+              <div className="font-serif text-3xl text-[#111111] font-semibold mb-1 tracking-tight">{c.n}</div>
               <div className="text-[10px] text-[#9CA3AF] uppercase tracking-[0.2em] mb-4">{c.o}</div>
               <div className="h-px bg-[#E5E7EB] mb-4" />
               <div className="text-xs text-[#6B7280] leading-5">{c.d}</div>
