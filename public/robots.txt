@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lotus-prime-coat-nxt.lovable.app/sitemap.xml
