@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
+      { title: "Lotus Paint — Metal Coat" },
       { name: "description", content: "Lotus Paint Showcase is a premium Vietnamese landing page for water-based metal paint." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
+      { name: "author", content: "Lotus Paint" },
+      { property: "og:title", content: "Lotus Paint — Metal Coat" },
       { property: "og:description", content: "Lotus Paint Showcase is a premium Vietnamese landing page for water-based metal paint." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
